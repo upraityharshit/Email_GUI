@@ -1,0 +1,33 @@
+<form (submit) = doSubmitForm()>
+<div class="container">
+    <div class="card">
+        <h1> Compose Email.</h1>
+        <div class="line"></div>
+       
+        <mat-form-field>
+            <mat-label>To</mat-label>
+            <input type="email" name="to" [(ngModel)]="data.to" matInput required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Subject</mat-label>
+            <input matInput type="text" name="subject" [(ngModel)]="data.subject" required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Textarea</mat-label>
+            <textarea rows="5" matInput name="message" [(ngModel)]="data.message" required></textarea>
+        </mat-form-field>
+
+        <mat-spinner *ngIf="flag" style="margin: auto;"></mat-spinner>
+        <h5 *ngIf="isMailSend" style="margin: auto;">Email Send Succeessfully...</h5>
+        <h5 *ngIf="isMailNotSend" style="margin: auto;">Email Not Send...</h5>
+        
+        <div class="button-group">
+            <button type="submit" style="margin-right: 40px;" mat-raised-button color="primary">Submit</button>
+            <button type="reset" mat-raised-button color="warn">Reset</button>
+        </div>
+        
+    </div>
+</div>
+</form>
