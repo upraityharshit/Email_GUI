@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class EmailService {
 
-  private baseUrl:string="https://emailapi-backend.onrender.com";
+  private baseUrl:string="enter your email api url";
 
   constructor(private http:HttpClient) { }
   
